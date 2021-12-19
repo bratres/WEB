@@ -21,6 +21,7 @@ body {
 .password {
 	position: relative;
 	top: 100px;
+	z-index: 4;
 	text-align: center;
 	text-transform: uppercase;
 	font-family: 'Roboto Mono', monospace;
@@ -28,6 +29,7 @@ body {
 	font-size: 60px;
 	line-height: 100px;
 	letter-spacing: 3px;
+	transition: 1s;
 }
 
 section.photo {
@@ -151,6 +153,10 @@ body > button {
 	text-align: center;
 	margin: 50px 100px;
 	color: lime;
+}
+
+.gift {
+	margin: 0;
 }
 
 p {

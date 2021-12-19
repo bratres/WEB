@@ -13,6 +13,9 @@ body {
 	position: absolute;
 	left: 0;
 	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
 }
 
 .password {
@@ -46,7 +49,7 @@ section.letters {
 button {
 	width: 40px;
 	height: 40px;
-	margin: 7px;
+	margin: 6px;
 	background-color: transparent;
 	font-size: 20px;
 	border: rgb(179, 179, 179) 2px solid;
@@ -108,7 +111,7 @@ body > button {
 	width: 20%;
 	height: 15%;
 	left: 40%;
-	top: 50%;
+	top: 55%;
 	z-index: 2;
 	background-color: black;
 	border: 5px black solid;
@@ -139,10 +142,12 @@ body > button {
 	font-family: arial;
 }
 
-.restart {
+.restart,
+.gift {
+	border: none;
 	width: 200px;
-	height: 100px;
-	line-height: 100px;
+	height: 120px;
+	line-height: 100%;
 	text-align: center;
 	margin: 50px 100px;
 	color: lime;
@@ -154,11 +159,28 @@ p {
 	font-family: arial;
 }
 
+i {
+	margin: auto;
+	color: royalblue;
+	font-size: 100px;
+}
+
+.reward {
+	position: inherit;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	transition: 1s;
+	z-index: 3;
+	background-color: cornflowerblue;
+}
+
 @media (orientation: portrait) {
 	.curtain h1 {
 		margin: 5%;
-		margin-top: 25%;
-		font-size: 70px;
+		margin-top: 20%;
+		font-size: 40px;
 	}
 
 	.popup {
@@ -203,6 +225,10 @@ p {
 }
 
 @media (orientation: landscape) and (max-width: 840px) {
+	.curtain h1 {
+		font-size: 45px;
+	}
+
 	body > button {
 		width: 25%;
 		height: 15%;
@@ -234,7 +260,7 @@ p {
 	button {
 		width: 35px;
 		height: 35px;
-		margin: 5px;
+		margin: 3px;
 		font-size: 15px;
 	}
 }

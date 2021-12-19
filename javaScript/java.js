@@ -8,8 +8,10 @@ const section = document.querySelector('.letters')
 const win = document.querySelector('.win')
 const lose = document.querySelector('.lose')
 const correctPassword = document.querySelectorAll('span')
-const restart = document.querySelectorAll('.restart')
+const restart = document.querySelector('.restart')
+const gift = document.querySelector('.gift')
 const test = document.querySelector('div.hidden')
+const reward = document.querySelector('.reward')
 let yes = new Audio('audio/yes.wav')
 let no = new Audio('audio/no.wav')
 let password
@@ -74,21 +76,24 @@ for (const letter of letters) {
 	})
 }
 
-for (const button of restart) {
-	button.addEventListener('click', function () {
-		win.classList.add('hidden')
-		lose.classList.add('hidden')
-		curtain.classList.remove('hidden')
-		start.classList.remove('hidden')
-		photo.classList.remove('hidden')
-		section.classList.remove('hidden')
-		for (const letter of letters) {
-			letter.classList.remove('correct')
-			letter.classList.remove('wrong')
-		}
-		z = 0
-		s = 0
-		photo.setAttribute('src', `img/s0.jpg`)
-		hiddenPassword = ''
-	})
-}
+restart.addEventListener('click', function () {
+	win.classList.add('hidden')
+	lose.classList.add('hidden')
+	curtain.classList.remove('hidden')
+	start.classList.remove('hidden')
+	photo.classList.remove('hidden')
+	section.classList.remove('hidden')
+	for (const letter of letters) {
+		letter.classList.remove('correct')
+		letter.classList.remove('wrong')
+	}
+	z = 0
+	s = 0
+	photo.setAttribute('src', `img/s0.jpg`)
+	hiddenPassword = ''
+})
+
+gift.addEventListener('click', function () {
+	reward.style.top = '0'
+	console.log('00')
+})

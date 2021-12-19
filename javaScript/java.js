@@ -95,5 +95,5 @@ restart.addEventListener('click', function () {
 
 gift.addEventListener('click', function () {
 	reward.style.top = '0'
-	console.log('00')
+	div.style.top = '250px'
 })

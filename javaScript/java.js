@@ -72,7 +72,7 @@ for (const letter of letters) {
 				photo.classList.add('hidden')
 				up.classList.remove('ghost')
 				down.classList.remove('ghost')
-			}, 400)
+			}, 700)
 		} else if (s == 9) {
 			lose.classList.remove('hidden')
 			section.classList.add('hidden')

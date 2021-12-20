@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 	<head>
+		<title>heart</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -12,16 +13,25 @@
 	</head>
 
 	<body>
-		<input type="text" class="popup hidden" value="Ola" />
+		<canvas id="c"></canvas>
+		<script>
+			var b = document.body
+			var c = document.getElementsByTagName('canvas')[0]
+			var a = c.getContext('2d')
+			document.body.clientWidth
+		</script>
+		<input type="text" class="popup hidden" value="najpiękniejsza" />
 		<button class="popup">start</button>
 		<div class="curtain">
 			<h1>
-				dla najpiękniejszej <br />
-				dziewczyny
+				wesołych świąt <br /><i class="fas fa-holly-berry"></i><i class="fas fa-holly-berry"></i
+				><i class="fas fa-holly-berry"></i>
 			</h1>
 		</div>
 		<header>
 			<div class="password"></div>
+			<div class="password up ghost">Jesteś</div>
+			<div class="password down ghost">na świecie</div>
 		</header>
 		<section class="photo"><img src="img/s0.jpg" alt="wisielec" /></section>
 		<section class="letters">
@@ -71,7 +81,8 @@
 				<button>ź</button>
 			</div>
 		</section>
-		<section class="win hidden">
+		<section class="win ghost">
+			<div>(a jak się uśmiechasz to robi mi się słabo)</div>
 			<button class="gift"><i class="fas fa-gift"></i></button>
 		</section>
 		<section class="lose hidden">
@@ -80,7 +91,7 @@
 		</section>
 		<div class="reward"></div>
 
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="javaScript/javascript.js"></script>
 		<script src="javaScript/java.js"></script>
 	</body>
 </html>

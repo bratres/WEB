@@ -12,6 +12,8 @@ const restart = document.querySelector('.restart')
 const gift = document.querySelector('.gift')
 const test = document.querySelector('div.hidden')
 const reward = document.querySelector('.reward')
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
 let yes = new Audio('audio/yes.wav')
 let no = new Audio('audio/no.wav')
 let password
@@ -19,7 +21,7 @@ let x
 let hiddenPassword = ''
 let z = 0
 let s = 0
-let a
+let point
 
 start.addEventListener('click', function (e) {
 	password = input.value.toLowerCase()
@@ -46,28 +48,29 @@ start.addEventListener('click', function (e) {
 
 for (const letter of letters) {
 	letter.addEventListener('click', function () {
-		a = 0
+		point = 0
 		for (let i = 0; i < password.length; i++) {
 			if (letter.textContent == password.charAt(i)) {
 				letter.classList.add('correct')
-				yes.play()
 				div.textContent =
 					div.textContent.slice(0, i) + password.charAt(i) + div.textContent.slice(i + 1, password.length)
 				z++
-				a = 1
+				point = 1
 			} else {
 				letter.classList.add('wrong')
 			}
 		}
-		if (a == 0) {
-			no.play()
+		if (point == 0) {
 			s++
 			photo.setAttribute('src', `img/s${s}.jpg`)
 		}
 		if (z == x) {
-			win.classList.remove('hidden')
+			win.style.top = '330px'
+			win.classList.remove('ghost')
 			section.classList.add('hidden')
 			photo.classList.add('hidden')
+			up.classList.remove('ghost')
+			down.classList.remove('ghost')
 		} else if (s == 9) {
 			lose.classList.remove('hidden')
 			section.classList.add('hidden')
@@ -94,6 +97,15 @@ restart.addEventListener('click', function () {
 })
 
 gift.addEventListener('click', function () {
-	reward.style.top = '0'
-	div.style.top = '250px'
+	win.style.top = '100%'
+	win.classList.add('ghost')
+	up.classList.add('ghost')
+	down.classList.add('ghost')
+	div.classList.add('ghost')
+	setTimeout(function () {
+		div.textContent = 'Ola'
+		div.classList.remove('ghost')
+		div.style.top = '50%'
+		div.style.transform = 'translateY(-50%)'
+	}, 1300)
 })

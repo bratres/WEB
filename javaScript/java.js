@@ -65,12 +65,14 @@ for (const letter of letters) {
 			photo.setAttribute('src', `img/s${s}.jpg`)
 		}
 		if (z == x) {
-			win.style.top = '330px'
-			win.classList.remove('ghost')
-			section.classList.add('hidden')
-			photo.classList.add('hidden')
-			up.classList.remove('ghost')
-			down.classList.remove('ghost')
+			setTimeout(function () {
+				win.style.top = '330px'
+				win.classList.remove('ghost')
+				section.classList.add('hidden')
+				photo.classList.add('hidden')
+				up.classList.remove('ghost')
+				down.classList.remove('ghost')
+			}, 400)
 		} else if (s == 9) {
 			lose.classList.remove('hidden')
 			section.classList.add('hidden')

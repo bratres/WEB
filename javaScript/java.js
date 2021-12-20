@@ -27,7 +27,7 @@ start.addEventListener('click', function (e) {
 	password = input.value.toLowerCase()
 	curtain.classList.add('hidden')
 	start.classList.add('hidden')
-	password.classList.remove('hidden')
+	password.classList.remove('ghost')
 	x = password.length
 	for (let i = 0; i < password.length; i++) {
 		if (password.charAt(i) == ' ') {
@@ -89,7 +89,7 @@ restart.addEventListener('click', function () {
 	start.classList.remove('hidden')
 	photo.classList.remove('hidden')
 	section.classList.remove('hidden')
-	password.classList.add('hidden')
+	password.classList.add('ghost')
 	for (const letter of letters) {
 		letter.classList.remove('correct')
 		letter.classList.remove('wrong')

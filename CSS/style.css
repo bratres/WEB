@@ -33,6 +33,10 @@ body {
 	transition: 0.7s;
 }
 
+.left {
+	transform: translateY(120px);
+}
+
 section.photo {
 	position: absolute;
 	top: 280px;
@@ -82,19 +86,47 @@ button:hover {
 	pointer-events: none;
 }
 
-section.win {
+.win {
 	position: absolute;
 	top: 100%;
-	left: 25%;
-	width: 50%;
+	width: 100%;
 	color: white;
 	text-align: center;
 	transition: 0.7s;
 }
 
-section.lose {
+.win2,
+.win3 {
 	position: absolute;
-	top: 300px;
+	top: -100%;
+	width: 100%;
+	font-size: 0px;
+	text-align: center;
+	font-size: 80px;
+	letter-spacing: 30px;
+	transition: 0.7s;
+	color: darkviolet;
+}
+
+section i:last-child {
+	letter-spacing: 0;
+}
+
+.win2Down {
+	top: 20px;
+}
+
+.win3 {
+	top: 100%;
+}
+
+.win3Up {
+	transform: translateY(-100px);
+}
+
+.lose {
+	position: absolute;
+	top: 35%;
 	left: 25%;
 	width: 50%;
 	color: white;
@@ -159,6 +191,9 @@ body > button {
 
 .gift {
 	margin: 0;
+	width: 100%;
+	height: 100%;
+	letter-spacing: 10px;
 }
 
 p {
@@ -207,6 +242,24 @@ button i {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+section.winUp {
+	transform: translateY(-200px);
+}
+
+/* 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1 */
+
 @media (orientation: portrait) {
 	.curtain h1 {
 		margin: 5%;
@@ -224,8 +277,20 @@ button i {
 	}
 
 	.password {
-		font-size: 50px;
+		font-size: 30px;
 		line-height: 8%;
+	}
+
+	.left {
+		transform: translateY(180px);
+	}
+
+	.up {
+		top: 50px;
+	}
+
+	.down {
+		top: 155px;
 	}
 
 	.photo img {
@@ -233,21 +298,60 @@ button i {
 	}
 
 	section.photo {
-		top: 125px;
+		top: 145px;
 		left: 10%;
 		width: 80%;
 	}
 
 	section.letters {
-		top: 380px;
+		top: 350px;
 		left: 0;
 		width: 100%;
 	}
 
-	button {
+	.letters button {
 		margin: 3px;
+		width: 35px;
+		height: 35px;
+	}
+
+	section.winUp {
+		transform: translateY(-150px);
+	}
+
+	.win2,
+	.win3 {
+		font-size: 40px;
+		letter-spacing: 15px;
+	}
+
+	.win2Down {
+		top: 50px;
+	}
+
+	.win3Up {
+		transform: translateY(-80px);
+	}
+
+	.restart {
+		margin: 50px 0 0 0;
+		width: 90%;
+		height: 60px;
+		border: rgb(179, 179, 179) 2px solid;
 	}
 }
+
+/* 1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1 */
 
 @media (orientation: landscape) and (max-width: 840px) {
 	.curtain h1 {
@@ -255,27 +359,42 @@ button i {
 	}
 
 	body > button {
-		width: 25%;
-		height: 15%;
-		left: 37.5%;
-		top: 50%;
+		width: 30%;
+		height: 20%;
+		left: 35%;
+		top: 60%;
 		line-height: 80%;
 		font-size: 30px;
 	}
 
 	.password {
-		top: 40px;
-		font-size: 50px;
+		top: 30px;
+		font-size: 40px;
+	}
+
+	.up {
+		top: -15px;
+	}
+
+	.down {
+		top: 80px;
+		z-index: 0;
+	}
+
+	.left {
+		font-size: 30px;
+		transform: translateY(65px);
 	}
 
 	section.photo {
 		top: 120px;
-		width: 50%;
+		width: 45%;
 	}
 
 	section.letters {
-		top: 140px;
-		width: 47%;
+		top: 120px;
+		width: 50%;
+		right: 10px;
 	}
 
 	.photo img {
@@ -283,9 +402,98 @@ button i {
 	}
 
 	button {
-		width: 35px;
-		height: 35px;
-		margin: 3px;
+		width: 33px;
+		height: 33px;
+		margin: 2px;
 		font-size: 15px;
+	}
+
+	section.win {
+		top: 100%;
+	}
+
+	section.winUp {
+		transform: translateY(-90px);
+	}
+
+	.win2,
+	.win3 {
+		font-size: 40px;
+		letter-spacing: 40px;
+	}
+
+	.win2Down {
+		top: 10px;
+	}
+
+	.win3Up {
+		transform: translateY(-50px);
+	}
+
+	.win div {
+		font-size: 13px;
+		margin: 3%;
+	}
+
+	button i {
+		font-size: 50px;
+	}
+
+	.lose {
+		top: 45%;
+	}
+
+	.lose p {
+		font-size: 30px;
+	}
+
+	.restart {
+		margin: 30px 0 0 0;
+		width: 50%;
+		height: 60px;
+		border: rgb(179, 179, 179) 2px solid;
+	}
+}
+
+/* 1
+1
+1
+1
+1
+1
+1
+1
+1 */
+
+@media (orientation: landscape) and (min-width: 1600px) {
+	.curtain h1 {
+		margin-top: 15%;
+		font-size: 70px;
+	}
+
+	.popup {
+		height: 10%;
+	}
+
+	.left {
+		transform: translateY(250px);
+	}
+
+	section.winUp {
+		transform: translateY(-330px);
+	}
+
+	.win2,
+	.win3 {
+		font-size: 120px;
+		letter-spacing: 80px;
+	}
+
+	.win2Down {
+		top: 50px;
+	}
+
+	.win3Up {
+		transform: translateY(-180px);
 	}
 }

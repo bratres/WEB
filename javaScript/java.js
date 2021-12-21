@@ -14,14 +14,55 @@ const test = document.querySelector('div.hidden')
 const reward = document.querySelector('.reward')
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
-let yes = new Audio('audio/yes.wav')
-let no = new Audio('audio/no.wav')
+const win2 = document.querySelector('.win2')
+const win3 = document.querySelector('.win3')
+let myUniverse = new Audio('audio/myUniverse.mp3')
 let password
 let x
 let hiddenPassword = ''
 let z = 0
 let s = 0
 let point
+
+const specialPerson = () => {
+	setTimeout(function () {
+		win3.classList.add('win3Up')
+		win2.classList.add('win2Down')
+		win.classList.add('winUp')
+		win.classList.remove('ghost')
+		section.classList.add('hidden')
+		photo.classList.add('hidden')
+		up.classList.remove('ghost')
+		down.classList.remove('ghost')
+		up.classList.add('left')
+		down.classList.add('left')
+		div.classList.add('left')
+		myUniverse.play()
+	}, 700)
+	setTimeout(function () {
+		up.classList.remove('left')
+		down.classList.remove('left')
+		div.classList.remove('left')
+		win3.classList.remove('win3Up')
+		win2.classList.remove('win2Down')
+		win.classList.remove('winUp')
+		win.classList.add('ghost')
+		up.classList.add('ghost')
+		down.classList.add('ghost')
+		div.classList.add('ghost')
+		;(function doit() {
+			requestAnimationFrame(doit)
+			loop()
+		})()
+		setTimeout(function () {
+			div.textContent = 'Ola'
+			div.classList.remove('left')
+			div.classList.remove('ghost')
+			div.style.top = '50%'
+			div.style.transform = 'translateY(-50%)'
+		}, 1300)
+	}, 8500)
+}
 
 start.addEventListener('click', function (e) {
 	password = input.value.toLowerCase()
@@ -66,14 +107,7 @@ for (const letter of letters) {
 			photo.setAttribute('src', `img/s${s}.jpg`)
 		}
 		if (z == x) {
-			setTimeout(function () {
-				win.style.top = '330px'
-				win.classList.remove('ghost')
-				section.classList.add('hidden')
-				photo.classList.add('hidden')
-				up.classList.remove('ghost')
-				down.classList.remove('ghost')
-			}, 700)
+			specialPerson()
 		} else if (s == 9) {
 			lose.classList.remove('hidden')
 			section.classList.add('hidden')
@@ -83,7 +117,6 @@ for (const letter of letters) {
 }
 
 restart.addEventListener('click', function () {
-	win.classList.add('hidden')
 	lose.classList.add('hidden')
 	curtain.classList.remove('hidden')
 	start.classList.remove('hidden')
@@ -98,18 +131,4 @@ restart.addEventListener('click', function () {
 	s = 0
 	photo.setAttribute('src', `img/s0.jpg`)
 	hiddenPassword = ''
-})
-
-gift.addEventListener('click', function () {
-	win.style.top = '100%'
-	win.classList.add('ghost')
-	up.classList.add('ghost')
-	down.classList.add('ghost')
-	div.classList.add('ghost')
-	setTimeout(function () {
-		div.textContent = 'Ola'
-		div.classList.remove('ghost')
-		div.style.top = '50%'
-		div.style.transform = 'translateY(-50%)'
-	}, 1300)
 })

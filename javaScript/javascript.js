@@ -109,12 +109,3 @@ function loop() {
 		}
 	}
 } // eo loop()
-
-const present = document.querySelector('.gift')
-
-present.addEventListener('click', function () {
-	setTimeout(function doit() {
-		requestAnimationFrame(doit)
-		loop()
-	}, 800)
-})

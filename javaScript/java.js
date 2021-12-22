@@ -16,6 +16,8 @@ const up = document.querySelector('.up')
 const down = document.querySelector('.down')
 const win2 = document.querySelector('.win2')
 const win3 = document.querySelector('.win3')
+const heart = document.querySelector('.heart')
+const icon = document.querySelector('.heart > i')
 let myUniverse = new Audio('audio/myUniverse.mp3')
 let password
 let x
@@ -37,6 +39,7 @@ const specialPerson = () => {
 		up.classList.add('left')
 		down.classList.add('left')
 		div.classList.add('left')
+		heart.classList.remove('hidden')
 		myUniverse.play()
 	}, 700)
 	setTimeout(function () {
@@ -50,17 +53,41 @@ const specialPerson = () => {
 		up.classList.add('ghost')
 		down.classList.add('ghost')
 		div.classList.add('ghost')
-		;(function doit() {
-			requestAnimationFrame(doit)
-			loop()
-		})()
+		div.classList.add('finish')
+		heart.classList.add('finish')
 		setTimeout(function () {
-			div.textContent = 'Ola'
-			div.classList.remove('left')
+			heart.classList.remove('ghost')
 			div.classList.remove('ghost')
-			div.style.top = '50%'
-			div.style.transform = 'translateY(-50%)'
-		}, 1300)
+			div.textContent = 'You'
+			setTimeout(function () {
+				div.textContent = 'You are'
+				heart.innerHTML = '<i class="fas fa-heart"></i><i class="fas fa-heart"></i>'
+			}, 1200)
+			setTimeout(function () {
+				heart.innerHTML = '<i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>'
+				div.textContent = 'My Universe'
+			}, 2300)
+			setTimeout(function () {
+				div.classList.remove('finish')
+				div.style.transition = '0.7s ease-out'
+				div.classList.add('ghost')
+				heart.classList.remove('finish')
+				heart.classList.add('ghost')
+				heart.style.transform = 'translate(-50%, -100%)'
+			}, 18500)
+			setTimeout(() => {
+				;(function doit() {
+					requestAnimationFrame(doit)
+					loop()
+				})()
+			}, 36000)
+			setTimeout(function () {
+				div.classList.remove('ghost')
+				div.style.top = '50%'
+				div.style.transform = 'translateY(-50%)'
+				div.textContent = 'Ola'
+			}, 37000)
+		}, 1100)
 	}, 8500)
 }
 

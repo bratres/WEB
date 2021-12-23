@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Inter&display=swap');
+
 /* font-family: 'Roboto Mono', monospace; */
 /*@media (orientation: portrait) and (min-width: 360px) { */
 
@@ -28,30 +30,32 @@
 		opacity: 1;
 	}
 }
-@keyframes textForLove2 {
+@keyframes intro {
 	0% {
 		opacity: 0;
 	}
-	3% {
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes wishes {
+	0% {
 		opacity: 0;
 	}
 	10% {
 		opacity: 1;
 	}
-	30% {
-		opacity: 0;
-	}
-	35% {
-		opacity: 1;
-	}
-	55% {
-		opacity: 0;
-	}
-	70% {
+	90% {
 		opacity: 1;
 	}
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 
@@ -309,16 +313,6 @@ section.winUp {
 	animation-delay: 1.1s;
 }
 
-.finish2 {
-	top: 50%;
-	transform: translateY(-50%);
-	animation-name: textForLove2;
-	animation-duration: 4s;
-	animation-timing-function: ease-in;
-	animation-iteration-count: 1;
-	animation-delay: 1.1s;
-}
-
 .heart {
 	position: absolute;
 	top: 50%;
@@ -334,6 +328,50 @@ section.winUp {
 
 .heart i:last-child {
 	letter-spacing: 0;
+}
+
+.wishLove {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+.intro {
+	position: relative;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
+	font-size: 100px;
+	opacity: 0;
+}
+
+.introAnimation {
+	animation-name: intro;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+}
+
+.wishes {
+	position: relative;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70%;
+	text-align: center;
+	font-size: 50px;
+	opacity: 0;
+}
+
+.wishesAnimation {
+	animation-name: wishes;
+	animation-duration: 12s;
+	animation-iteration-count: 1;
+	animation-delay: 2.25s;
 }
 
 /* 1
@@ -369,6 +407,10 @@ section.winUp {
 	.password {
 		font-size: 30px;
 		line-height: 8%;
+	}
+
+	.grow {
+		font-size: 80px;
 	}
 
 	.left {
@@ -437,6 +479,14 @@ section.winUp {
 
 	.heart {
 		font-size: 100px;
+	}
+
+	.intro {
+		font-size: 50px;
+	}
+
+	.wishes {
+		font-size: 20px;
 	}
 }
 
@@ -555,6 +605,14 @@ section.winUp {
 
 	.heart {
 		font-size: 150px;
+	}
+
+	.intro {
+		font-size: 50px;
+	}
+
+	.wishes {
+		font-size: 30px;
 	}
 }
 

@@ -18,6 +18,9 @@ const win2 = document.querySelector('.win2')
 const win3 = document.querySelector('.win3')
 const heart = document.querySelector('.heart')
 const icon = document.querySelector('.heart > i')
+const wishLove = document.querySelector('.wishLove')
+const intro = document.querySelector('.intro')
+const wishes = document.querySelector('.wishes')
 let myUniverse = new Audio('audio/myUniverse.mp3')
 let password
 let x
@@ -73,7 +76,16 @@ const specialPerson = () => {
 				heart.classList.remove('finish')
 				heart.classList.add('ghost')
 				heart.style.transform = 'translate(-50%, -100%)'
+				intro.classList.remove('hidden')
+				wishes.classList.remove('hidden')
+				wishLove.classList.remove('hidden')
 			}, 18500)
+			setTimeout(() => {
+				intro.classList.remove('ghost')
+				wishes.classList.remove('ghost')
+				intro.classList.add('introAnimation')
+				wishes.classList.add('wishesAnimation')
+			}, 20000)
 			setTimeout(() => {
 				;(function doit() {
 					requestAnimationFrame(doit)
@@ -82,6 +94,7 @@ const specialPerson = () => {
 			}, 36000)
 			setTimeout(function () {
 				div.classList.remove('ghost')
+				div.classList.add('grow')
 				div.style.top = '50%'
 				div.style.transform = 'translateY(-50%)'
 				div.textContent = 'Ola'

@@ -28,6 +28,32 @@
 		opacity: 1;
 	}
 }
+@keyframes textForLove2 {
+	0% {
+		opacity: 0;
+	}
+	3% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+	}
+	35% {
+		opacity: 1;
+	}
+	55% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 * {
 	margin: 0;
@@ -130,7 +156,7 @@ button:hover {
 	font-size: 0px;
 	text-align: center;
 	font-size: 80px;
-	letter-spacing: 30px;
+	letter-spacing: 50px;
 	transition: 0.7s;
 	color: darkviolet;
 }
@@ -283,6 +309,16 @@ section.winUp {
 	animation-delay: 1.1s;
 }
 
+.finish2 {
+	top: 50%;
+	transform: translateY(-50%);
+	animation-name: textForLove2;
+	animation-duration: 4s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+	animation-delay: 1.1s;
+}
+
 .heart {
 	position: absolute;
 	top: 50%;
@@ -398,6 +434,10 @@ section.winUp {
 		height: 80px;
 		border: rgb(179, 179, 179) 2px solid;
 	}
+
+	.heart {
+		font-size: 100px;
+	}
 }
 
 /* 1
@@ -511,6 +551,10 @@ section.winUp {
 
 	.finish {
 		top: 50%;
+	}
+
+	.heart {
+		font-size: 150px;
 	}
 }
 

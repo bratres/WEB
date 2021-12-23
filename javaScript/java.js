@@ -69,7 +69,6 @@ const specialPerson = () => {
 			}, 2300)
 			setTimeout(function () {
 				div.classList.remove('finish')
-				div.style.transition = '0.7s ease-out'
 				div.classList.add('ghost')
 				heart.classList.remove('finish')
 				heart.classList.add('ghost')

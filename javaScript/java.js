@@ -21,6 +21,7 @@ const icon = document.querySelector('.heart > i')
 const wishLove = document.querySelector('.wishLove')
 const intro = document.querySelector('.intro')
 const wishes = document.querySelector('.wishes')
+const myWish = document.querySelector('.myWish')
 let myUniverse = new Audio('audio/myUniverse.mp3')
 let password
 let x
@@ -79,6 +80,7 @@ const specialPerson = () => {
 				intro.classList.remove('hidden')
 				wishes.classList.remove('hidden')
 				wishLove.classList.remove('hidden')
+				myWish.classList.remove('hidden')
 			}, 18500)
 			setTimeout(() => {
 				intro.classList.remove('ghost')
@@ -98,6 +100,7 @@ const specialPerson = () => {
 				div.style.top = '50%'
 				div.style.transform = 'translateY(-50%)'
 				div.textContent = 'Ola'
+				myWish.classList.add('dream')
 			}, 37000)
 		}, 1100)
 	}, 8500)
